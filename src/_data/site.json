@@ -1,0 +1,20 @@
+{
+  "name": "Kamil Tylus",
+  "role": "Data scientist / AI engineer",
+  "description": "Projects, writing, and background of Kamil Tylus, data scientist and AI engineer.",
+  "intro": [
+    "I'm working on LLM applications, thinking about how recent advancements in models' capabilities could be used in production.",
+    "Experimenting with different ways of using AI assistants to take on more ambitious projects or finish tasks faster."
+  ],
+  "about": [
+    "I\u2019m currently a Data Scientist at Verisk, based in Poland. I have a MSc degree in Computer Science from Jagiellonian University, where I focused on deep learning.",
+    "Over the last couple of years I've moved more towards the engineering side of ML, including LLMs."
+  ],
+  "links": {
+    "github": "https://github.com/ktylus",
+    "linkedin": "https://www.linkedin.com/in/kamil-tylus-5055ab234/",
+    "email": "kamil.tylus22@protonmail.com"
+  },
+  "cv": "/files/cv_kamil_tylus.pdf",
+  "updated": "2026-09-07"
+}

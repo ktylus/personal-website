@@ -1,0 +1,6 @@
+node_modules/
+_site/
+.npm-cache/
+.DS_Store
+guide.md
+todo.txt

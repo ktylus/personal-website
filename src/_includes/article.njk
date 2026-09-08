@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<article>
+  <div class="article-header">
+    <a href="/#{{ section }}">← Back to {{ section }}</a>
+    <h1>{{ title }}</h1>
+    {% if section == "writing" %}<p class="article-date">{{ page.date | readableDate }}</p>{% endif %}
+    {% if live or github %}
+    <div class="project-links">
+      {% if live %}<a href="{{ live }}">Live app →</a>{% endif %}
+      {% if github %}<a href="{{ github }}">GitHub →</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="article-body">{{ content | safe }}</div>
+</article>

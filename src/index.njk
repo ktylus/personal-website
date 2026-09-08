@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+<section class="intro" aria-labelledby="intro-title">
+  <div class="intro-content">
+    <h1 id="intro-title">{{ site.name }}</h1>
+    <p class="role">{{ site.role }}</p>
+    {% if site.cv %}
+    <div class="intro-details"><a href="{{ site.cv }}">CV ↗</a></div>
+    {% endif %}
+    <div class="intro-copy">{% for paragraph in site.intro %}<p>{{ paragraph }}</p>{% endfor %}</div>
+  </div>
+  <img class="intro-portrait" src="/assets/portrait_cropped.jpg" alt="Portrait of {{ site.name }}" width="2111" height="2575" decoding="async">
+</section>
+{% if collections.projects.length %}
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title">Projects</h2>
+  {% for project in collections.projects %}
+  <article class="project">
+    <h3>{{ project.data.title }}</h3>
+    <p>{{ project.data.description }}</p>
+    <div class="project-links">
+      {% if project.data.live %}<a href="{{ project.data.live }}">Live app →</a>{% endif %}
+      {% if project.data.github %}<a href="{{ project.data.github }}">GitHub →</a>{% endif %}
+      <a href="{{ project.url }}">Read the technical write-up →</a>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+{% if collections.writing.length %}
+<section class="section" id="writing" aria-labelledby="writing-title">
+  <h2 id="writing-title">Writing</h2>
+  <div class="writing-list">
+    {% for post in collections.writing %}
+    <article class="writing-item">
+      <span class="status">{{ post.date | readableDate }}</span>
+      <div><h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3><p>{{ post.data.description }}</p></div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+<section class="section about" id="about" aria-labelledby="about-title">
+  <h2 id="about-title">About</h2>
+  {% for paragraph in site.about %}<p>{{ paragraph }}</p>{% endfor %}
+</section>
