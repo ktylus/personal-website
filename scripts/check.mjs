@@ -18,7 +18,13 @@ try {
   assert.match(await readFile(path.join(output, "index.html"), "utf8"), /Content check fixture/);
   const homepage = await readFile(path.join(output, "index.html"), "utf8");
   assert.match(homepage, /href="https:\/\/github\.com\/ktylus\/chess_opening_assistant"[^>]*>GitHub/);
-  assert.match(homepage, /href="https:\/\/mnwjhbdxsk\.eu-central-1\.awsapprunner\.com\/"[^>]*>Live app/);
+  assert.match(homepage, /href="https:\/\/chess\.kamiltylus\.com"[^>]*>Live app/);
+  const project = await readFile(path.join(output, "projects/chess-opening-assistant/index.html"), "utf8");
+  assert.match(project, /Published: 11\.09\.2026/);
+  assert.doesNotMatch(project, /Last updated: 11\.09\.2026/);
+  assert.match(project, /<pre class="mermaid">flowchart TD/);
+  assert.match(project, /src="\/assets\/vendor\/mermaid\.min\.js"/);
+  assert.equal(await exists(path.join(output, "assets/vendor/mermaid.min.js")), true);
   await writeFile(fixture, (await readFile(fixture, "utf8")).replace("draft: false", "draft: true"));
   build();
   assert.equal(await exists(publishedPath), false, "Unpublished article must be removed from output");

@@ -7,6 +7,10 @@
   <meta name="description" content="{{ description or site.description }}">
   <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
   <link rel="stylesheet" href="/assets/site.css">
+  {% if mermaid %}
+  <script src="/assets/vendor/mermaid.min.js" defer></script>
+  <script src="/assets/mermaid-init.js" defer></script>
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +26,6 @@
       {% endif %}
     </header>
     <main id="main">{{ content | safe }}</main>
-    <footer><span>© {{ site.updated | year }} {{ site.name }}</span><span>Last updated {{ site.updated | readableDate }}</span></footer>
   </div>
 </body>
 </html>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Chess opening study retrieval by exact board position</title>
+  <desc id="desc">A position from the application is compared with three studies. Two different positions are rejected, while the matching position is selected and its study is added to the agent context.</desc>
+  <defs>
+    <pattern id="board" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="#f2f0e9"/>
+      <rect width="50" height="50" fill="#8a989f"/>
+      <rect x="50" y="50" width="50" height="50" fill="#8a989f"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f474b"/>
+    </marker>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#172126" flood-opacity=".12"/>
+    </filter>
+    <g id="main-position" class="pieces">
+      <text x="25" y="25">♜</text><text x="125" y="25">♝</text><text x="175" y="25">♛</text><text x="225" y="25">♚</text><text x="275" y="25">♝</text><text x="325" y="25">♞</text><text x="375" y="25">♜</text>
+      <text x="25" y="75">♟</text><text x="75" y="75">♟</text><text x="125" y="75">♟</text><text x="175" y="75">♟</text><text x="275" y="75">♟</text><text x="325" y="75">♟</text><text x="375" y="75">♟</text>
+      <text x="125" y="125">♞</text><text x="75" y="175">♗</text><text x="225" y="175">♟</text><text x="225" y="225">♙</text><text x="275" y="275">♘</text>
+      <text x="25" y="325">♙</text><text x="75" y="325">♙</text><text x="125" y="325">♙</text><text x="175" y="325">♙</text><text x="275" y="325">♙</text><text x="325" y="325">♙</text><text x="375" y="325">♙</text>
+      <text x="25" y="375">♖</text><text x="75" y="375">♘</text><text x="125" y="375">♗</text><text x="175" y="375">♕</text><text x="225" y="375">♔</text><text x="375" y="375">♖</text>
+    </g>
+    <g id="alternate-one" class="pieces">
+      <text x="25" y="25">♜</text><text x="125" y="25">♝</text><text x="175" y="25">♛</text><text x="225" y="25">♚</text><text x="275" y="25">♝</text><text x="325" y="25">♞</text><text x="375" y="25">♜</text>
+      <text x="25" y="75">♟</text><text x="75" y="75">♟</text><text x="175" y="75">♟</text><text x="225" y="75">♟</text><text x="275" y="75">♟</text><text x="325" y="75">♟</text><text x="375" y="75">♟</text>
+      <text x="125" y="125">♞</text><text x="125" y="175">♟</text><text x="225" y="225">♙</text><text x="125" y="275">♘</text>
+      <text x="25" y="325">♙</text><text x="75" y="325">♙</text><text x="125" y="325">♙</text><text x="175" y="325">♙</text><text x="275" y="325">♙</text><text x="325" y="325">♙</text><text x="375" y="325">♙</text>
+      <text x="25" y="375">♖</text><text x="125" y="375">♗</text><text x="175" y="375">♕</text><text x="225" y="375">♔</text><text x="275" y="375">♗</text><text x="325" y="375">♘</text><text x="375" y="375">♖</text>
+    </g>
+    <g id="alternate-two" class="pieces">
+      <text x="25" y="25">♜</text><text x="75" y="25">♞</text><text x="125" y="25">♝</text><text x="175" y="25">♛</text><text x="225" y="25">♚</text><text x="275" y="25">♝</text><text x="325" y="25">♞</text><text x="375" y="25">♜</text>
+      <text x="25" y="75">♟</text><text x="75" y="75">♟</text><text x="125" y="75">♟</text><text x="175" y="75">♟</text><text x="275" y="75">♟</text><text x="325" y="75">♟</text><text x="375" y="75">♟</text>
+      <text x="225" y="175">♟</text><text x="75" y="275">♙</text>
+      <text x="25" y="325">♙</text><text x="75" y="325">♗</text><text x="125" y="325">♙</text><text x="175" y="325">♙</text><text x="225" y="325">♙</text><text x="275" y="325">♙</text><text x="325" y="325">♙</text><text x="375" y="325">♙</text>
+      <text x="25" y="375">♖</text><text x="75" y="375">♘</text><text x="175" y="375">♕</text><text x="225" y="375">♔</text><text x="275" y="375">♗</text><text x="325" y="375">♘</text><text x="375" y="375">♖</text>
+    </g>
+    <style>
+      text { font-family: Inter, system-ui, sans-serif; fill: #172126; }
+      .caption { font-size: 18px; font-weight: 650; }
+      .small { font-size: 15px; fill: #5a6469; }
+      .pieces text { font-family: "DejaVu Sans", "Segoe UI Symbol", serif; font-size: 42px; text-anchor: middle; dominant-baseline: central; }
+      .flow { fill: none; stroke: #3f474b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .reject { fill: #fff; stroke: #a64545; stroke-width: 2.5; }
+      .accept { fill: #fff; stroke: #39734d; stroke-width: 2.5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="650" rx="12" fill="#fafafa"/>
+
+  <text class="caption" x="142" y="182" text-anchor="middle">Position on the board</text>
+  <g transform="translate(42 205) scale(.5)" filter="url(#soft-shadow)">
+    <rect width="400" height="400" fill="url(#board)"/>
+    <use href="#main-position"/>
+  </g>
+
+  <path class="flow" d="M 252 305 H 338"/>
+  <rect x="350" y="260" width="190" height="88" rx="8" fill="#fff" stroke="#879298" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text class="caption" x="445" y="297" text-anchor="middle">Retrieval</text>
+  <text class="small" x="445" y="322" text-anchor="middle">Compare board states</text>
+
+  <text class="caption" x="756" y="36" text-anchor="middle">Positions referenced by studies</text>
+  <path class="flow" d="M 540 282 C 590 282 608 130 686 130"/>
+  <path class="flow" d="M 540 304 C 590 304 608 305 686 305"/>
+  <path class="flow" d="M 540 326 C 590 326 608 480 686 480"/>
+
+  <g transform="translate(696 70) scale(.3)" filter="url(#soft-shadow)">
+    <rect width="400" height="400" fill="url(#board)"/>
+    <use href="#alternate-one"/>
+  </g>
+  <g transform="translate(696 420) scale(.3)" filter="url(#soft-shadow)">
+    <rect width="400" height="400" fill="url(#board)"/>
+    <use href="#alternate-two"/>
+  </g>
+  <g transform="translate(696 245) scale(.3)" filter="url(#soft-shadow)">
+    <rect width="400" height="400" fill="url(#board)"/>
+    <use href="#main-position"/>
+  </g>
+
+  <circle class="reject" cx="650" cy="130" r="15"/><path d="M643 123l14 14m0-14l-14 14" stroke="#a64545" stroke-width="3"/>
+  <circle class="reject" cx="650" cy="480" r="15"/><path d="M643 473l14 14m0-14l-14 14" stroke="#a64545" stroke-width="3"/>
+  <circle class="accept" cx="650" cy="305" r="15"/><path d="M643 305l5 6 10-13" fill="none" stroke="#39734d" stroke-width="3"/>
+
+  <text class="small" x="756" y="239" text-anchor="middle">Study B · match</text>
+  <text class="small" x="756" y="64" text-anchor="middle">Study A</text>
+  <text class="small" x="756" y="414" text-anchor="middle">Study C</text>
+
+  <path class="flow" d="M 826 305 H 888"/>
+  <rect x="900" y="260" width="260" height="88" rx="8" fill="#fff" stroke="#879298" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text class="caption" x="1030" y="297" text-anchor="middle">Agent</text>
+  <text class="small" x="1030" y="322" text-anchor="middle">Answers with relevant context</text>
+</svg>

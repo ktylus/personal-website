@@ -52,7 +52,6 @@ h3 { font-size: 23px; line-height: 1.35; font-weight: 600; letter-spacing: -.3px
 .writing-item h3 { font-size: 18px; font-weight: 500; letter-spacing: -.15px; margin-bottom: 3px; }
 .writing-item p { font-size: 16px; }
 .about p + p { margin-top: 19px; }
-footer { padding-block: 19px 35px; display: flex; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 12px; }
 @media (max-width: 600px) {
   body { font-size: 17px; }
   .page { width: calc(100% - 40px); }
@@ -70,7 +69,6 @@ footer { padding-block: 19px 35px; display: flex; justify-content: space-between
   .status { font-size: 11px; }
   .writing-list { gap: 25px; }
   .project-links { gap: 12px 23px; font-size: 15px; }
-  footer { font-size: 11px; flex-wrap: wrap; }
 }
 @media (max-width: 350px) {
   header { flex-wrap: wrap; }
@@ -89,6 +87,11 @@ footer { padding-block: 19px 35px; display: flex; justify-content: space-between
 .article-body h2 { margin-top: 36px; margin-bottom: 16px; }
 .article-body h3 { margin-top: 28px; }
 .article-body img { max-width: 100%; height: auto; }
+.article-figure { margin: 30px 0; }
+.article-figure img { display: block; width: 100%; }
+.article-body figcaption { margin-top: 9px; color: var(--muted); font-size: 14px; text-align: center; }
+.article-body .mermaid { margin: 30px 0; padding: 0; overflow-x: auto; background: transparent; text-align: center; }
+.article-body .mermaid svg { max-width: 100%; height: auto; }
 .article-body pre { overflow-x: auto; padding: 16px; background: #f5f6f7; font-size: 14px; }
 .article-body blockquote { border-left: 2px solid var(--line); padding-left: 20px; color: var(--muted); }
 .article-body table { display: block; overflow-x: auto; border-collapse: collapse; }
