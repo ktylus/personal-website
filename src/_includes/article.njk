@@ -6,6 +6,7 @@ layout: base.njk
     <a href="/#{{ section }}">← Back to {{ section }}</a>
     <h1>{{ title }}</h1>
     {% if section == "writing" %}<p class="article-date">{{ page.date | readableDate }}</p>{% endif %}
+    {% if section == "projects" and published %}<p class="article-date">Published: {{ published | numericDate }}</p>{% endif %}
     {% if live or github %}
     <div class="project-links">
       {% if live %}<a href="{{ live }}">Live app →</a>{% endif %}
