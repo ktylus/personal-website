@@ -126,7 +126,7 @@ I'll share an example of discovering an issue and improving evaluation based on 
 
 Responses are also scored deterministically for used tools. Each example is assigned a list of tools that are expected to be used for it.
 
-The topic of evaluation is one where I most clearly see the work that still needs to be done. I want to publish the app to get real users - that will give me production traces to analyse, group into patterns, and improve evals based on that, so that they track issues that users are actually experiencing. I believe this has to be done manually - as we engage with real data, we are confronted with a question of what we want the agent to be like, exactly, and refine and document requirements based on that.
+The topic of evaluation is one where I most clearly see the work that still needs to be done. Using the app will give me production traces to analyse, group into patterns, and improve evals based on that, so that they track issues that users are actually experiencing. I believe this has to be done manually - as we engage with real data, we are confronted with a question of what we want the agent to be like, exactly, and refine and document requirements based on that.
 
 ### Engineering
 
