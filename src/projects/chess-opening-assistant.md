@@ -14,7 +14,7 @@ I've been interested in agentic AI, following the developments in that space clo
 
 ### Why this, exactly?
 
-I've been interested in chess for a long time, often playing with friends. An important part of the game is knowing what to do at the start of the game, and how to respond to common initial moves of your opponents. These move sequences are called openings.
+I've been interested in chess for a long time, often playing with friends. An important part of the game is knowing what to do at the start, and how to respond to common initial moves of your opponents. These move sequences are called openings.
 
 Studying openings has been increasingly popular among beginners and intermediate players, who see it as a sure way to achieve better results. However, popular ways of studying rely on memorising moves, instead of exploring ideas behind them. I think that this makes players' progress slow, as their game understanding is left less developed.
 
