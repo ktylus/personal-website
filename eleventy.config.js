@@ -11,6 +11,12 @@ export default function (config) {
       }
       return defaultFence(tokens, index, options, env, self);
     };
+    // Give headings slug ids so in-page links to markdown sections resolve.
+    const slugify = config.getFilter("slugify");
+    markdown.renderer.rules.heading_open = (tokens, index, options, env, self) => {
+      tokens[index].attrSet("id", slugify(tokens[index + 1].content));
+      return self.renderToken(tokens, index, options);
+    };
   });
   config.addFilter("readableDate", value => new Intl.DateTimeFormat("en-GB", {
     day: "numeric", month: "short", year: "numeric", timeZone: "UTC"
